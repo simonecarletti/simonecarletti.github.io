@@ -1,6 +1,6 @@
 Get-ChildItem -Path . -Recurse -exclude update-website.ps1 | remove-item -Confirm:$false -Force
 cd ..
-# npm run build --modern
+npm run build --modern
 cd simonecarletti.github.io
 Copy-item -Force -Recurse -Verbose ..\dist\* -Destination .\
 git add .
