@@ -52,26 +52,8 @@ const experienceData = {
   ],
 };
 
-
 const context = {
   currYear: new Date().getFullYear(),
-  socials: [
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/simone-carletti-it/",
-      icon: "logo-linkedin",
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/regi18",
-      icon: "logo-github",
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/simone_carletti/",
-      icon: "logo-instagram",
-    },
-  ],
   clients: [
     {
       url: "https://www.genomedics.it/",
@@ -113,6 +95,13 @@ const context = {
       style: "background-color: hsl(19, 97%, 85%)",
       value: "simone_carletti",
       href: "https://www.instagram.com/simone_carletti/",
+    },
+    {
+      name: "GitHub",
+      icon: "logo-github",
+      href: "https://github.com/regi18",
+      style: "background-color: hsl(76, 39%, 72%)",
+      value: "regi18",
     },
   ],
   experienceItems: [
