@@ -1,5 +1,5 @@
 /*-----------------------------------*\
-  #service.css
+  #experience.css
 \*-----------------------------------*/
 
 /**
@@ -14,7 +14,7 @@
  * Btn............................Button style
  *
  * MAIN CONTENT
- * Service........................Service style
+ * experience........................experience style
  * Media queries..................Responsive for all devices
  */
 
@@ -34,7 +34,7 @@
 
 
 /*-----------------------------------*\
-  #SERVICES
+  #experienceS
 \*-----------------------------------*/
 
 .card-title { margin-block-end: 10px; }
@@ -43,11 +43,11 @@
 
 .card .body-sm { color: var(--jet); }
 
-.service .card-container {
+.experience .card-container {
   margin: 1em 0;
 }
 
-.service .grid-container {
+.experience .grid-container {
   display: grid;
   gap: 50px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -68,6 +68,6 @@
 
 @media (min-width: 768px) {
 
-  .service-list { grid-template-columns: 1fr 1fr; }
+  .experience-list { grid-template-columns: 1fr 1fr; }
 
 }

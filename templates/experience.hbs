@@ -1,14 +1,14 @@
-<section class="section service has-bg-image" aria-labelledby="service-label"
-    style="background-image: url('./assets/images/service-bg.png')">
+<section class="section experience has-bg-image" aria-labelledby="experience-label"
+    style="background-image: url('./assets/images/experience-bg.png')">
     <div class="container">
-        <h2 class="section-title headline-md text-center" id="service-label">My experience</h2>
+        <h2 class="section-title headline-md text-center" id="experience-label">My experience</h2>
 
         <div class="grid-container">
-            {{#each portfolioItems}}
+            {{#each experienceItems}}
             <div class="grid-element">
                 <h2 class="headline-sm" style="text-align: center">{{this.name}}</h2>
 
-                <ul class="service-list">
+                <ul class="experience-list">
                     {{#each this.items}}
                     <li class="card-container">
                         <a href="{{this.url}}" target="_blank" class="card card-md" style="background-color: {{../color}}">

@@ -1,0 +1,36 @@
+.client {
+  background-color: var(--jet);
+}
+
+.client .slider {
+  padding-block: 20px;
+}
+
+.client .slider-item { min-width: calc(50% - 15px); }
+
+.client .slider::-webkit-scrollbar {
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+
+@media (min-width: 575px) {
+  .client .slider-item { min-width: calc(33.33% - 20px); }
+
+  .client .slider {
+    padding-block: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .client .slider-item { min-width: calc(25% - 22.5px); }
+}
+
+@media (min-width: 992px) {
+  .client .slider-item { min-width: calc(20% - 24px); }
+}
+
+
+

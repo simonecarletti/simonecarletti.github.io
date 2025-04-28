@@ -23,12 +23,11 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="./assets/js/handlebar-init.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/context.js"></script>
 
     <!-- Custom css link -->
     <link rel="stylesheet" href="./assets/css/require.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/pages/contact.css" />
-    <link rel="stylesheet" href="./assets/css/pages/service.css" />
 
     <!-- Preload images -->
     <link rel="preload" href="./assets/images/hero-banner.png" />
@@ -48,156 +47,21 @@
     <div id="header"></div>
     <main>
       <article><div id="main"></div></article>
-      <article><div id="portfolio"></div></article>
+      <article><div id="experience"></div></article>
       <article><div id="contact"></div></article>
     </main>
     <div id="footer"></div>
 
     <script>
-      const portfolioData = {
-        employment: [
-          {
-            name: "Genomedics s.r.l",
-            position: "Full-Stack Developer",
-            date: "2020 - Present",
-            description:
-              "Lead developer of three key projects that handle the release, deployment and licence management for all the company’s products. Developer for the company’s main project (KPlatform).",
-            importantInfo: "Angular (Typescript, SCSS, HTML), PHP, Laravel, SQL, Python",
-            url: "https://www.genomedics.it/",
-          },
-          {
-            name: "DIANA student team",
-            position: "Control Engineer",
-            date: "2023 - 2024",
-            description: "Development of a martian rover for the ERC competition",
-            url: "https://www.teamdiana.it/",
-          },
-        ],
-        education: [
-          {
-            name: "Technical University of Denmark",
-            position: "M.Sc. Autonomous Systems",
-            date: "2024 - Present",
-            description: "1 year Erasmus+ exchange.",
-            url: "https://www.dtu.dk/",
-          },
-          {
-            name: "Politecnico di Torino",
-            position: "M.Sc. Computer Engineering",
-            date: "2023 - Present",
-            description: "Automation and Intelligent Cyber-Physical Systems",
-            importantInfo: "Current GPA: 29.23/30",
-            url: "https://www.polito.it/",
-          },
-          {
-            name: "Università degli Studi di Firenze",
-            position: "B.Sc. Computer Engineering",
-            date: "2020 - 2023",
-            importantInfo: "Graduated with 110/110 cum laude (with honors)",
-            description: "Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence",
-            url: "https://www.unifi.it/",
-          },
-          {
-            name: "Università degli Studi di Firenze",
-            position: "CyberChallenge",
-            date: "2020 - 2023",
-            description:
-              "The first italian cybersecurity training program for talented university and high school students",
-            url: "https://cyberchallenge.it/",
-          },
-        ],
-      }
-
-      const context = {
-        currYear: new Date().getFullYear(),
-        socials: [
-          {
-            name: "LinkedIn",
-            url: "https://www.linkedin.com/in/simone-carletti-it/",
-            icon: "logo-linkedin",
-          },
-          {
-            name: "GitHub",
-            url: "https://github.com/regi18",
-            icon: "logo-github",
-          },
-          {
-            name: "Instagram",
-            url: "https://www.instagram.com/simone_carletti/",
-            icon: "logo-instagram",
-          },
-        ],
-        clients: [
-          {
-            url: "https://www.genomedics.it/",
-            src: "./assets/images/clients/genomedics.png",
-          },
-          {
-            url: "https://www.dtu.dk/",
-            src: "./assets/images/clients/dtu.png",
-            skipColorChange: true,
-          },
-          {
-            url: "https://www.polito.it/",
-            src: "./assets/images/clients/polito.png",
-          },
-          {
-            url: "https://www.unifi.it/",
-            src: "./assets/images/clients/unifi.svg",
-          },
-        ],
-        contacts: [
-          {
-            name: "Email",
-            icon: "mail",
-            style: "background-color: hsl(41, 99%, 64%)",
-            value: "simonecarletti.work@gmail.com",
-            href: "mailto:simonecarletti.work@gmail.com",
-            nonClickableValue: true,
-          },
-          {
-            name: "Linkedin",
-            icon: "logo-linkedin",
-            style: "background-color: hsl(221, 100%, 79%)",
-            value: "simone-carletti-it",
-            href: "https://www.linkedin.com/in/simone-carletti-it/",
-          },
-          {
-            name: "Instagram",
-            icon: "logo-instagram",
-            style: "background-color: hsl(19, 97%, 85%)",
-            value: "simone_carletti",
-            href: "https://www.instagram.com/simone_carletti/",
-          },
-        ],
-        portfolioItems: [
-          {
-            name: 'Education',
-            // color: 'hsl(19, 97%, 85%)',
-            color: 'hsl(76, 39%, 72%)',
-            items: portfolioData.education,
-            icon: 'school-outline',
-          },
-          {
-            name: 'Employment',
-            color: 'hsl(177, 39%, 72%)',
-            items: portfolioData.employment,
-            icon: 'laptop-outline',
-          }
-        ]
-      };
-
       const h = loadTemplate("header.hbs", context, "header");
       const m = loadTemplate("main.hbs", context, "main");
-      const p = loadTemplate("portfolio.hbs", context, "portfolio");
+      const p = loadTemplate("experience.hbs", context, "experience");
       const c = loadTemplate("contact.hbs", context, "contact");
       const f = loadTemplate("footer.hbs", context, "footer");
 
       Promise.all([h, m, p, c, f]).then(() => main());
     </script>
 
-    <!-- Custom js link -->
-    <!-- <script src="./assets/js/script.js"></script> -->
     <!-- <script src="./assets/js/css-color-converter.js"></script> -->
     <!-- Ionicon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
