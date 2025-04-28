@@ -82,6 +82,7 @@
 .hero .container {
   display: grid;
   gap: 70px;
+  padding-inline: 40px; 
 }
 
 .hero-subtitle {

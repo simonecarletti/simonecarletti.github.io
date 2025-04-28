@@ -231,7 +231,7 @@ body.loaded { overflow: visible; }
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 40px; }
+.container { padding-inline: 25px; }
 
 .section { padding-block: var(--section-padding); }
 
