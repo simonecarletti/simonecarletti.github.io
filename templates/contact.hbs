@@ -1,10 +1,16 @@
-<section class="section contact has-bg-image" aria-labelledby="contact-label" style="background-image: url('./assets/images/contact-bg.png')">
-    {{!-- TITLE --}}
+<section class="section contact has-bg-image" aria-labelledby="contact-label"
+    style="background-image: url('./assets/images/contact-bg.png')">
+    {{! TITLE }}
     <h2 class="title title-lg">Intrested in working with me?</h2>
 
-    {{!-- FORM --}}
+    {{! FORM }}
     <div class="container">
-        <form action="" class="contact-form">
+        <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLScWHbSmSDUUoJVABDF-BI6brnAW2TVTeZvUk-RPiY8bQaAmOw/formResponse?&submit=Submit"
+            target="hidden_iframe" 
+            onsubmit="submitted=true;" 
+            class="contact-form"
+        >
             <h2 class="headline-sm" id="contact-label">Get in touch</h2>
 
             <p class="contact-text body-md">
@@ -13,38 +19,45 @@
 
             <div class="wrapper">
                 <div>
-                    <label for="name" class="label">First name</label>
-                    <input type="text" name="name" id="name" placeholder="Name *" required class="input-field">
+                    <label for="name" class="label">Full name</label>
+                    <input type="text" name="entry.328699579" id="name" placeholder="Name *" required
+                        class="input-field" />
                 </div>
 
                 <div>
                     <label for="email" class="label">Your Email </label>
-                    <input type="email" name="email" id="email" placeholder="Email *" required class="input-field">
+                    <input type="email" name="entry.1617489869" id="email" placeholder="Email *" required
+                        class="input-field" />
                 </div>
             </div>
 
             <label for="subject" class="label">Subject</label>
-            <input type="text" name="subject" id="subject" placeholder="Subject *" class="input-field">
+            <input type="text" name="entry.289861166" id="subject" placeholder="Subject *" class="input-field" />
 
             <label for="message" class="label">Your message </label>
-            <textarea name="message" id="message" placeholder="Your message *" required
+            <textarea name="entry.1662240294" id="message" placeholder="Your message *" required
                 class="input-field"></textarea>
 
-            <a href="#" class="btn btn-tertiary">Send Message</a>
+            <button type="submit" class="btn btn-tertiary">Send Message</button>
         </form>
+
+        <!-- Hidden iframe -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onContactFormSubmit();"></iframe>
 
         <div class="contact-content">
             <ul class="contact-list">
                 {{#each contacts}}
                 <li class="contact-item">
-                    <div class="item-icon" style="{{this.style}}">
-                        <ion-icon name="{{this.icon}}" aria-hidden="true"></ion-icon>
-                    </div>
+                    <a href="{{this.href}}" target="_blank" class="contact-item">
+                        <div class="item-icon" style="{{this.style}}">
+                            <ion-icon name="{{this.icon}}" aria-hidden="true"></ion-icon>
+                        </div>
 
-                    <div>
-                        <p class="label-lg">{{this.name}}</p>
-                        <a href="{{this.href}}" class="body-lg">{{this.value}}</a>
-                    </div>
+                        <div>
+                            <p class="label-lg">{{this.name}}</p>
+                            <span class="body-lg">{{this.value}}</span>
+                        </div>
+                    </a>
                 </li>
                 {{/each}}
             </ul>

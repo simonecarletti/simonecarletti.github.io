@@ -53,6 +53,13 @@
     <div id="footer"></div>
 
     <script>
+      var submitted = false;
+      function onContactFormSubmit() {
+        if (submitted) {
+          alert("Thank you! Your message has been sent.");
+        }
+      } 
+
       const context = {
         currYear: new Date().getFullYear(),
         socials: [
