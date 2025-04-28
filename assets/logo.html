@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta tags -->
+    <title>LOGO</title>
+
+    <!-- Gogle font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Custom css link -->
+    <link rel="stylesheet" href="./css/require.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Preload images -->
+    <link rel="preload" href="./images/hero-banner.png" />
+
+    <style>
+      body {
+        background-color: greenyellow;
+      }
+
+      .logo .logo-surname {
+        margin: 0;
+        color: var(--white);
+        margin-top: 111px;
+        margin-left: -0.4em;
+        font-size: 1.65em;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+      .info {
+        margin: 5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="logo" id="logo" style="display: flex; font-size: 10em">
+      <span class="logo-name">S</span>
+      <span class="logo-surname">C</span>
+    </div>
+
+    <span class="info">Take a screenshot and then use <a href="https://www.remove.bg/">this website</a> to remove the background.</span>
+    <!-- <button onclick="exportLogo()" style="margin: 10em 2em; background-color: lightblue">EXPORT SVG</button> -->
+  </body>
+
+  <script>
+    function exportLogo3() {
+      const node = document.getElementById("logo");
+
+      domtoimage
+        .toSvg(node)
+        .then(function (dataUrl) {
+          const link = document.createElement("a");
+          link.download = "export.svg";
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch(function (error) {
+          console.error("oops, something went wrong!", error);
+        });
+    }
+
+    function exportLogo2() {
+      const node = document.getElementById("logo");
+
+      htmlToImage
+        .toSvg(node)
+        .then(function (dataUrl) {
+          const link = document.createElement("a");
+          link.download = "export.svg";
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch(function (error) {
+          console.error("oops, something went wrong!", error);
+        });
+    }
+
+    function exportLogo() {
+      const element = document.getElementById("logo");
+
+      html2canvas(element, { backgroundColor: null }).then((canvas) => {
+        const pngData = canvas.toDataURL("image/png");
+
+        // Download
+        const link = document.createElement("a");
+        link.href = pngData;
+        link.download = "export.png";
+        link.click();
+      });
+    }
+  </script>
+</html>
