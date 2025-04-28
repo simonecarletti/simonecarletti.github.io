@@ -1,66 +1,64 @@
-<section class="section contact has-bg-image" aria-labelledby="contact-label"
-    style="background-image: url('./assets/images/contact-bg.png')">
-    {{! TITLE }}
-    <h2 class="title title-lg">Intrested in working with me?</h2>
+<section
+  class="section contact has-bg-image"
+  aria-labelledby="contact-label"
+  style="background-image: url('./assets/images/contact-bg.png')"
+>
+  {{! TITLE }}
+  <h2 class="title title-lg">Intrested in working with me?</h2>
 
-    {{! FORM }}
-    <div class="container">
-        <form
-            action="https://docs.google.com/forms/d/e/1FAIpQLScWHbSmSDUUoJVABDF-BI6brnAW2TVTeZvUk-RPiY8bQaAmOw/formResponse?&submit=Submit"
-            target="hidden_iframe" 
-            onsubmit="submitted=true;" 
-            class="contact-form"
-        >
-            <h2 class="headline-sm" id="contact-label">Get in touch</h2>
+  {{! FORM }}
+  <div class="container">
+    <form class="contact-form" id="contact-form">
+      <h2 class="headline-sm" id="contact-label">Get in touch</h2>
 
-            <p class="contact-text body-md">
-                I would love to hear from you.
-            </p>
+      <p class="contact-text body-md">
+        I would love to hear from you.
+      </p>
 
-            <div class="wrapper">
-                <div>
-                    <label for="name" class="label">Full name</label>
-                    <input type="text" name="entry.328699579" id="name" placeholder="Name *" required
-                        class="input-field" />
-                </div>
+      <div class="wrapper">
+        <div>
+          <label for="name" class="label">Full name</label>
+          <input type="text" name="name" id="name" placeholder="Name *" required class="input-field" />
+        </div>
 
-                <div>
-                    <label for="email" class="label">Your Email </label>
-                    <input type="email" name="entry.1617489869" id="email" placeholder="Email *" required
-                        class="input-field" />
-                </div>
+        <div>
+          <label for="email" class="label">Your Email </label>
+          <input type="email" name="email" id="email" placeholder="Email *" required class="input-field" />
+        </div>
+      </div>
+
+      <label for="subject" class="label">Subject</label>
+      <input type="text" name="subject" id="subject" placeholder="Subject *" class="input-field" />
+
+      <label for="message" class="label">Your message </label>
+      <textarea name="message" id="message" placeholder="Your message *" required class="input-field"></textarea>
+
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+      <a class="btn btn-tertiary" onclick="sendContactForm();">Send Message</a>
+    </form>
+
+    <div class="contact-content">
+      <ul class="contact-list">
+        {{#each contacts}}
+          <li class="contact-item">
+            <div class="item-icon" style="{{this.style}}">
+                <a target="_blank"  href="{{this.href}}">
+                    <ion-icon name="{{this.icon}}" aria-hidden="true"></ion-icon>
+                </a>
             </div>
 
-            <label for="subject" class="label">Subject</label>
-            <input type="text" name="entry.289861166" id="subject" placeholder="Subject *" class="input-field" />
-
-            <label for="message" class="label">Your message </label>
-            <textarea name="entry.1662240294" id="message" placeholder="Your message *" required
-                class="input-field"></textarea>
-
-            <button type="submit" class="btn btn-tertiary">Send Message</button>
-        </form>
-
-        <!-- Hidden iframe -->
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onContactFormSubmit();"></iframe>
-
-        <div class="contact-content">
-            <ul class="contact-list">
-                {{#each contacts}}
-                <li class="contact-item">
-                    <a href="{{this.href}}" target="_blank" class="contact-item">
-                        <div class="item-icon" style="{{this.style}}">
-                            <ion-icon name="{{this.icon}}" aria-hidden="true"></ion-icon>
-                        </div>
-
-                        <div>
-                            <p class="label-lg">{{this.name}}</p>
-                            <span class="body-lg">{{this.value}}</span>
-                        </div>
-                    </a>
-                </li>
-                {{/each}}
-            </ul>
-        </div>
+            <div>
+            <p class="label-lg">{{this.name}}</p>
+            {{#if this.nonClickableValue}}
+                <span class="body-lg">{{this.value}}</span>
+            {{else}}
+                <a href="{{this.href}}" target="_blank" class="body-lg">{{this.value}}</a>
+            {{/if}}
+            </div>
+          </li>
+        {{/each}}
+      </ul>
     </div>
+  </div>
 </section>

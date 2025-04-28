@@ -20,6 +20,7 @@
   padding: 10px 22px;
   box-shadow: 6px 6px 0 -1px var(--shadow-color, var(--jet));
   transition: var(--transition-1);
+  cursor: pointer;
 }
 
 .btn-with-icon {

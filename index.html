@@ -11,7 +11,7 @@
 
     <!-- Favicon -->
     <!-- <link rel="shortcut icon" href="./assets/images/favicon.ico" /> -->
-    <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
 
     <!-- Gogle font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,8 +26,8 @@
     <!-- Custom css link -->
     <link rel="stylesheet" href="./assets/css/require.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/pages/contact.css">
-    <link rel="stylesheet" href="./assets/css/pages/service.css">
+    <link rel="stylesheet" href="./assets/css/pages/contact.css" />
+    <link rel="stylesheet" href="./assets/css/pages/service.css" />
 
     <!-- Preload images -->
     <link rel="preload" href="./assets/images/hero-banner.png" />
@@ -38,7 +38,7 @@
     <!-- PRELOADER -->
     <!--------------->
     <div class="preloader" data-preloader>
-        <div class="preloader-circle"></div>
+      <div class="preloader-circle"></div>
     </div>
 
     <!-------------->
@@ -53,134 +53,131 @@
     <div id="footer"></div>
 
     <script>
-      var submitted = false;
-      function onContactFormSubmit() {
-        if (submitted) {
-          alert("Thank you! Your message has been sent.");
-        }
-      } 
-
       const context = {
         currYear: new Date().getFullYear(),
         socials: [
           {
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/simone-carletti-it/',
-            icon: 'logo-linkedin',
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/simone-carletti-it/",
+            icon: "logo-linkedin",
           },
           {
-            name: 'GitHub',
-            url: 'https://github.com/regi18',
-            icon: 'logo-github',
+            name: "GitHub",
+            url: "https://github.com/regi18",
+            icon: "logo-github",
           },
           {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/simone_carletti/',
-            icon: 'logo-instagram',
+            name: "Instagram",
+            url: "https://www.instagram.com/simone_carletti/",
+            icon: "logo-instagram",
           },
         ],
         clients: [
           {
-            url: 'https://www.genomedics.it/',
-            src: './assets/images/clients/genomedics.png',
+            url: "https://www.genomedics.it/",
+            src: "./assets/images/clients/genomedics.png",
           },
           {
-            url: 'https://www.dtu.dk/',
-            src: './assets/images/clients/dtu.png',
+            url: "https://www.dtu.dk/",
+            src: "./assets/images/clients/dtu.png",
             skipColorChange: true,
           },
           {
-            url: 'https://www.polito.it/',
-            src: './assets/images/clients/polito.png',
+            url: "https://www.polito.it/",
+            src: "./assets/images/clients/polito.png",
           },
           {
-            url: 'https://www.unifi.it/',
-            src: './assets/images/clients/unifi.svg',
+            url: "https://www.unifi.it/",
+            src: "./assets/images/clients/unifi.svg",
           },
         ],
         contacts: [
           {
-            name: 'Email',
-            icon: 'mail',
-            style: 'background-color: hsl(41, 99%, 64%)',
-            value: 'simonecarletti.work@gmail.com',
-            href: 'mailto:simonecarletti.work@gmail.com'
+            name: "Email",
+            icon: "mail",
+            style: "background-color: hsl(41, 99%, 64%)",
+            value: "simonecarletti.work@gmail.com",
+            href: "mailto:simonecarletti.work@gmail.com",
+            nonClickableValue: true,
           },
           {
-            name: 'Linkedin',
-            icon: 'logo-linkedin',
-            style: 'background-color: hsl(221, 100%, 79%)',
-            value: 'simone-carletti-it',
-            href: 'https://www.linkedin.com/in/simone-carletti-it/'
+            name: "Linkedin",
+            icon: "logo-linkedin",
+            style: "background-color: hsl(221, 100%, 79%)",
+            value: "simone-carletti-it",
+            href: "https://www.linkedin.com/in/simone-carletti-it/",
           },
           {
-            name: 'Instagram',
-            icon: 'logo-instagram',
-            style: 'background-color: hsl(19, 97%, 85%)',
-            value: 'simone_carletti',
-            href: 'https://www.instagram.com/simone_carletti/'
-          }
+            name: "Instagram",
+            icon: "logo-instagram",
+            style: "background-color: hsl(19, 97%, 85%)",
+            value: "simone_carletti",
+            href: "https://www.instagram.com/simone_carletti/",
+          },
         ],
         employment: [
           {
-            name: 'Genomedics s.r.l',
-            position: 'Full-Stack Developer',
-            date: '2020 - Present',
-            description: 'Lead developer of three key projects that handle the release, deployment and licence management for all the company’s products. Developer for the company’s main project (KPlatform).',
-            keywords: 'Angular (Typescript, SCSS, HTML), PHP, Laravel, SQL, Python',
-            url: 'https://www.genomedics.it/',
-            bgColor: 'hsl(177, 39%, 72%)',
+            name: "Genomedics s.r.l",
+            position: "Full-Stack Developer",
+            date: "2020 - Present",
+            description:
+              "Lead developer of three key projects that handle the release, deployment and licence management for all the company’s products. Developer for the company’s main project (KPlatform).",
+            keywords: "Angular (Typescript, SCSS, HTML), PHP, Laravel, SQL, Python",
+            url: "https://www.genomedics.it/",
+            bgColor: "hsl(177, 39%, 72%)",
           },
           {
-            name: 'DIANA student team',
-            position: 'Control Engineer',
-            date: '2023 - 2024',
-            description: 'Development of a martian rover for the ERC competition',
-            url: 'https://www.teamdiana.it/',
-            bgColor: 'hsl(221, 100%, 79%)',
+            name: "DIANA student team",
+            position: "Control Engineer",
+            date: "2023 - 2024",
+            description: "Development of a martian rover for the ERC competition",
+            url: "https://www.teamdiana.it/",
+            bgColor: "hsl(221, 100%, 79%)",
           },
         ],
         education: [
           {
-            name: 'Technical University of Denmark',
-            position: 'M.Sc. Autonomous Systems',
-            date: '2024 - Present',
-            description: '1 year Erasmus+ exchange.',
-            url: 'https://www.dtu.dk/',
-            bgColor: 'hsl(19, 97%, 85%)',
+            name: "Technical University of Denmark",
+            position: "M.Sc. Autonomous Systems",
+            date: "2024 - Present",
+            description: "1 year Erasmus+ exchange.",
+            url: "https://www.dtu.dk/",
+            bgColor: "hsl(19, 97%, 85%)",
           },
           {
-            name: 'Politecnico di Torino',
-            position: 'M.Sc. Computer Engineering',
-            date: '2023 - Present',
-            description: 'Automation and Intelligent Cyber-Physical Systems - Current GPA: 29.23/30',
-            url: 'https://www.polito.it/',
-            bgColor: 'hsl(76, 39%, 72%)',
+            name: "Politecnico di Torino",
+            position: "M.Sc. Computer Engineering",
+            date: "2023 - Present",
+            description: "Automation and Intelligent Cyber-Physical Systems - Current GPA: 29.23/30",
+            url: "https://www.polito.it/",
+            bgColor: "hsl(76, 39%, 72%)",
           },
           {
-            name: 'Università degli Studi di Firenze',
-            position: 'B.Sc. Computer Engineering',
-            date: '2020 - 2023',
-            description: 'Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence',
-            url: 'https://www.unifi.it/',
-            bgColor: 'hsl(41, 99%, 64%)',
+            name: "Università degli Studi di Firenze",
+            position: "B.Sc. Computer Engineering",
+            date: "2020 - 2023",
+            description:
+              "Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence",
+            url: "https://www.unifi.it/",
+            bgColor: "hsl(41, 99%, 64%)",
           },
           {
-            name: 'Università degli Studi di Firenze',
-            position: 'CyberChallenge',
-            date: '2020 - 2023',
-            description: 'The first italian cybersecurity training program for talented university and high school students',
-            url: 'https://cyberchallenge.it/',
-            bgColor: 'hsl(221, 100%, 79%)',
+            name: "Università degli Studi di Firenze",
+            position: "CyberChallenge",
+            date: "2020 - 2023",
+            description:
+              "The first italian cybersecurity training program for talented university and high school students",
+            url: "https://cyberchallenge.it/",
+            bgColor: "hsl(221, 100%, 79%)",
           },
         ],
       };
 
-      const h = loadTemplate('header.hbs', context, "header");
-      const m = loadTemplate('main.hbs', context, "main");
-      const p = loadTemplate('portfolio.hbs', context, "portfolio");
-      const c = loadTemplate('contact.hbs', context, "contact");
-      const f = loadTemplate('footer.hbs', context, "footer");
+      const h = loadTemplate("header.hbs", context, "header");
+      const m = loadTemplate("main.hbs", context, "main");
+      const p = loadTemplate("portfolio.hbs", context, "portfolio");
+      const c = loadTemplate("contact.hbs", context, "contact");
+      const f = loadTemplate("footer.hbs", context, "footer");
 
       Promise.all([h, m, p, c, f]).then(() => main());
     </script>
