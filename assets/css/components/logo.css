@@ -1,0 +1,19 @@
+.logo {
+    /* position: relative; */
+}
+
+.logo .logo-name {
+    position: relative;
+    font-size: 2.2em;
+    font-weight: 900;
+    color: var(--orange-red);
+    z-index: 999;
+}
+
+.logo .logo-surname {
+    position: relative;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: -1.1em;
+    font-weight: 500;
+}

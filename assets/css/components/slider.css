@@ -1,0 +1,33 @@
+/*-----------------------------------*\
+  #slider.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 codewithsadee
+ */
+
+
+
+
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  justify-content: center;
+}
+
+.slider-item { scroll-snap-align: start; }
+
+.slider-item a {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-item img {
+  max-height: 70px;
+  max-width: 150px;
+  object-fit: contain;
+}

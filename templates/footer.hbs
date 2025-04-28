@@ -1,0 +1,17 @@
+<footer class="footer">
+    <div class="container">
+        <ul class="social-list">
+            {{#each socials}}
+            <li>
+                <a href="{{this.url}}" class="social-link">
+                    <ion-icon name="{{this.icon}}"></ion-icon>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+
+        <p class="text-center">
+            &copy; {{ currYear }} All rights reserved.
+        </p>
+    </div>
+</footer>

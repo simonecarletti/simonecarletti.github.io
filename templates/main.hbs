@@ -1,0 +1,82 @@
+<!-- HERO -->
+<section class="section hero" aria-label="home">
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-subtitle">👋, My name is Simone</p>
+
+            <h1 class="headline-lg">I'm a Computer Engineer</h1>
+
+            <figure class="hero-banner-mobile">
+                <img class="me-photo" src="./assets/images/CV_photo.jpeg" width="680" height="645" class="w-100" />
+            </figure>
+
+            <p class="hero-text body-md">
+                My main focus is on robotics and autonomous systems 🤖. I also have experience with full-stack web development.
+            </p>
+
+            <a href="#about" class="btn-with-icon btn-primary">
+                Let's Start
+                <ion-icon name="arrow-down-outline" style="font-size: 1.2em; margin-left: 0.5em"></ion-icon>
+            </a>
+        </div>
+
+        <figure class="hero-banner-desktop">
+            <img class="me-photo" src="./assets/images/CV_photo.jpeg" width="680" height="645" class="w-100" />
+        </figure>
+    </div>
+</section>
+
+<!-- CLIENT -->
+<section class="client" aria-label="Trusted client">
+    <div class="container">
+        <ul class="slider">
+            {{#each clients}}
+            <li class="slider-item">
+                <a href="{{this.url}}" target="_blank">
+                    {{#unless skipColorChange}}
+                    <img class="make-color-white" src="{{this.src}}" alt="clients" />
+                    {{else}}
+                    <img src="{{this.src}}" alt="clients" />
+                    {{/unless}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about" aria-label="about me">
+    <div class="container">
+        <figure class="about-banner">
+            {{!-- <img src="./assets/images/about-banner.png" width="580" height="554" loading="lazy" class="w-100" /> --}}
+            <img src="./assets/images/me.jpg" loading="lazy" />
+        </figure>
+
+        <div class="about-content">
+            <h2 class="title-lg">I'm a Computer Engineer and Full-stack Developer with over 5 years of experience.</h2>
+
+            <p class="body-md section-text">
+                I’m a Computer Engineering master’s student with a focus on robotics and autonomous systems. I have hands-on experience developing control systems for robots, working with embedded software, and building full-stack web applications. Over the years, I’ve contributed to both academic and industry projects—ranging from rover development for competitions to software platforms in the healthcare field. I’m currently studying at DTU as part of an Erasmus exchange, and I’m always keen to take on new technical challenges and learn by doing.
+            </p>
+
+            {{!-- <ul class="about-list">
+                <li>
+                    <p class="list-text"><strong class="strong title-md">285+</strong> Projet Completed</p>
+                </li>
+
+                <li>
+                    <p class="list-text"><strong class="strong title-md">190+</strong> Happy Clients</p>
+                </li>
+            </ul> --}}
+
+            <div class="wrapper">
+                <a href="https://github.com/regi18" target="_blank" class="btn-with-icon btn-primary">
+                    <ion-icon name="logo-github" style="font-size: 1.2em; margin-right: 0.5em"></ion-icon>
+                    View projects
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+

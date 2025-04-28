@@ -1,0 +1,60 @@
+<section class="section service has-bg-image" aria-labelledby="service-label"
+    style="background-image: url('./assets/images/service-bg.png')">
+    <div class="container">
+        <h2 class="section-title headline-md text-center" id="service-label">My experience</h2>
+
+        <div class="grid-container">
+            <div class="grid-element">
+                <h2 class="headline-sm">Education</h2>
+
+                <ul class="service-list">
+                    {{#each education}}
+                    <li class="card-container">
+                        <a href="{{this.url}}" target="_blank" class="card card-md"
+                            style="background-color: {{this.bgColor}}">
+
+                            <div class="card-media">
+                                <ion-icon name="school-outline" aria-hidden="true"></ion-icon>
+                            </div>
+
+                            <div>
+                                <h3 class="card-title title-sm" style="margin-bottom: 0">{{this.position}}</h3>
+                                <h3 class="card-title">{{this.name}}</h3>
+
+                                <p class="body-sm">{{this.description}}</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="grid-element">
+                <h2 class="headline-sm">Employment</h2>
+
+                <ul class="service-list">
+                    {{#each employment}}
+                    <li class="card-container">
+                        <a href="{{this.url}}" target="_blank" class="card card-md"
+                            style="background-color: {{this.bgColor}}">
+
+                            <div class="card-media">
+                                <ion-icon name="laptop-outline" aria-hidden="true"></ion-icon>
+                            </div>
+
+                            <div>
+                                <h3 class="card-title title-sm" style="margin-bottom: 0">{{this.position}}</h3>
+                                <h3 class="card-title">{{this.name}}</h3>
+
+                                <p class="body-sm">{{this.description}}</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
