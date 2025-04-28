@@ -226,7 +226,6 @@ body.loaded { overflow: visible; }
 
 
 
-
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
@@ -331,6 +330,9 @@ body.loaded { overflow: visible; }
 .nav-toggle-btn {
   color: var(--jet);
   font-size: 3.8rem;
+}
+.download-cv-btn { 
+  display: none; 
 }
 
 .navbar {
@@ -502,6 +504,8 @@ body.loaded { overflow: visible; }
    */
 
   .nav-toggle-btn { display: none; }
+  .download-cv-btn { display: flex !important; }
+  .download-cv-btn-navbar { display: none; }
 
   .navbar,
   .navbar.active,

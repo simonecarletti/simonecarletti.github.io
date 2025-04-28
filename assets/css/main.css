@@ -50,6 +50,21 @@
 
 .header.active { background-color: var(--white); }
 
+.download-cv-btn-navbar {
+  background-color: var(--orange-red);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--transition-1);
+  cursor: pointer;
+}
+
+.download-cv-btn-navbar a {
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
 
 
 
