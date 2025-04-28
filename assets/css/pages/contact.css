@@ -160,7 +160,7 @@ textarea {
 
 
 
-@media (max-width: 575px) {
+@media (max-width: 992px) {
   .contact .title {
     font-size: 2.5rem;
   }
@@ -168,7 +168,4 @@ textarea {
   .contact .contact-item .body-lg { 
     font-size: var(--fs-18); 
   }
-  /* .contact .contact-item .label-lg {
-    font-size: var(--fs-12); 
-  } */
 }

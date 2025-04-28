@@ -18,6 +18,11 @@ function main() {
   };
   navToggler.addEventListener("click", toggleNavbar);
 
+  const closeNavbar = function () {
+    navbar.classList.remove("active");
+  }
+  navbar.addEventListener("click", closeNavbar);
+
   /**
    * HEADER
    *
