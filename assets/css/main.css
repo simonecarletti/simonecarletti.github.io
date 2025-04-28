@@ -56,8 +56,11 @@
   font-weight: var(--fw-500);
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: var(--transition-1);
   cursor: pointer;
+}
+
+.download-cv-btn-navbar .navbar-link:is(:hover, :focus-visible, .active) {
+  color: var(--white);
 }
 
 .download-cv-btn-navbar a {
@@ -172,12 +175,20 @@
 
 .client {
   background-color: var(--jet);
-  padding-block: 30px;
+}
+
+.client .slider {
+  padding-block: 20px;
 }
 
 .client .slider-item { min-width: calc(50% - 15px); }
 
-.client .slider::-webkit-scrollbar { display: none; }
+.client .slider::-webkit-scrollbar {
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
 
 
 
@@ -367,6 +378,10 @@
    */
 
   .client .slider-item { min-width: calc(33.33% - 20px); }
+
+  .client .slider {
+    padding-block: 30px;
+  }
 
   .client .slider-item .w-100,
   .about-banner,

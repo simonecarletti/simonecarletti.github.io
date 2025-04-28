@@ -157,3 +157,18 @@ textarea {
   }
 
 }
+
+
+
+@media (max-width: 575px) {
+  .contact .title {
+    font-size: 2.5rem;
+  }
+  
+  .contact .contact-item .body-lg { 
+    font-size: var(--fs-18); 
+  }
+  /* .contact .contact-item .label-lg {
+    font-size: var(--fs-12); 
+  } */
+}

@@ -16,7 +16,7 @@
   gap: 30px;
   overflow-x: auto;
   scroll-snap-type: inline mandatory;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .slider-item { scroll-snap-align: start; }
@@ -30,4 +30,10 @@
   max-height: 70px;
   max-width: 150px;
   object-fit: contain;
+}
+
+@media (max-width: 575px) {
+  .slider-item img {
+    max-height: 50px;;
+  }
 }

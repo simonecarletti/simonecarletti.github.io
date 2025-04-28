@@ -363,7 +363,7 @@ body.loaded { overflow: visible; }
 
 .navbar.active > * {
   opacity: 1;
-  transition-delay: 0.4s;
+  transition-delay: 0.05s;
 }
 
 .navbar-item:not(:last-child) { border-block-end: 1px solid var(--jet_a10); }
