@@ -4,15 +4,14 @@
         <h2 class="section-title headline-md text-center" id="service-label">My experience</h2>
 
         <div class="grid-container">
+            {{#each portfolioItems}}
             <div class="grid-element">
-                <h2 class="headline-sm">Education</h2>
+                <h2 class="headline-sm">{{this.name}}</h2>
 
                 <ul class="service-list">
-                    {{#each education}}
+                    {{#each this.items}}
                     <li class="card-container">
-                        <a href="{{this.url}}" target="_blank" class="card card-md"
-                            style="background-color: {{this.bgColor}}">
-
+                        <a href="{{this.url}}" target="_blank" class="card card-md" style="background-color: {{../color}}">
                             <div class="card-media">
                                 <ion-icon name="school-outline" aria-hidden="true"></ion-icon>
                             </div>
@@ -21,40 +20,16 @@
                                 <h3 class="card-title title-sm" style="margin-bottom: 0">{{this.position}}</h3>
                                 <h3 class="card-title">{{this.name}}</h3>
 
-                                <p class="body-sm">{{this.description}}</p>
-                            </div>
+                                <p class="card-title" style="color: var(--jet); font-weight: 500">{{this.importantInfo}}</p>
 
+                                <p class="body-sm" style="font-style: italic">{{this.description}}</p>
+                            </div>
                         </a>
                     </li>
                     {{/each}}
                 </ul>
             </div>
-
-            <div class="grid-element">
-                <h2 class="headline-sm">Employment</h2>
-
-                <ul class="service-list">
-                    {{#each employment}}
-                    <li class="card-container">
-                        <a href="{{this.url}}" target="_blank" class="card card-md"
-                            style="background-color: {{this.bgColor}}">
-
-                            <div class="card-media">
-                                <ion-icon name="laptop-outline" aria-hidden="true"></ion-icon>
-                            </div>
-
-                            <div>
-                                <h3 class="card-title title-sm" style="margin-bottom: 0">{{this.position}}</h3>
-                                <h3 class="card-title">{{this.name}}</h3>
-
-                                <p class="body-sm">{{this.description}}</p>
-                            </div>
-
-                        </a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
+            {{/each}}
         </div>
     </div>
 </section>

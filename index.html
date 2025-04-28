@@ -53,6 +53,60 @@
     <div id="footer"></div>
 
     <script>
+      const portfolioData = {
+        employment: [
+          {
+            name: "Genomedics s.r.l",
+            position: "Full-Stack Developer",
+            date: "2020 - Present",
+            description:
+              "Lead developer of three key projects that handle the release, deployment and licence management for all the company’s products. Developer for the company’s main project (KPlatform).",
+            importantInfo: "Angular (Typescript, SCSS, HTML), PHP, Laravel, SQL, Python",
+            url: "https://www.genomedics.it/",
+          },
+          {
+            name: "DIANA student team",
+            position: "Control Engineer",
+            date: "2023 - 2024",
+            description: "Development of a martian rover for the ERC competition",
+            url: "https://www.teamdiana.it/",
+          },
+        ],
+        education: [
+          {
+            name: "Technical University of Denmark",
+            position: "M.Sc. Autonomous Systems",
+            date: "2024 - Present",
+            description: "1 year Erasmus+ exchange.",
+            url: "https://www.dtu.dk/",
+          },
+          {
+            name: "Politecnico di Torino",
+            position: "M.Sc. Computer Engineering",
+            date: "2023 - Present",
+            description: "Automation and Intelligent Cyber-Physical Systems",
+            importantInfo: "Current importantInfo: 29.23/30",
+            url: "https://www.polito.it/",
+          },
+          {
+            name: "Università degli Studi di Firenze",
+            position: "B.Sc. Computer Engineering",
+            date: "2020 - 2023",
+            importantInfo: "Graduated with 110/110 cum laude (with honors)",
+            description: "Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence",
+            url: "https://www.unifi.it/",
+          },
+          {
+            name: "Università degli Studi di Firenze",
+            position: "CyberChallenge",
+            date: "2020 - 2023",
+            description:
+              "The first italian cybersecurity training program for talented university and high school students",
+            url: "https://cyberchallenge.it/",
+          },
+        ],
+      }
+
       const context = {
         currYear: new Date().getFullYear(),
         socials: [
@@ -115,62 +169,19 @@
             href: "https://www.instagram.com/simone_carletti/",
           },
         ],
-        employment: [
+        portfolioItems: [
           {
-            name: "Genomedics s.r.l",
-            position: "Full-Stack Developer",
-            date: "2020 - Present",
-            description:
-              "Lead developer of three key projects that handle the release, deployment and licence management for all the company’s products. Developer for the company’s main project (KPlatform).",
-            keywords: "Angular (Typescript, SCSS, HTML), PHP, Laravel, SQL, Python",
-            url: "https://www.genomedics.it/",
-            bgColor: "hsl(177, 39%, 72%)",
+            name: 'Education',
+            color: 'hsl(19, 97%, 85%)',
+            color: 'hsl(76, 39%, 72%)',
+            items: portfolioData.education,
           },
           {
-            name: "DIANA student team",
-            position: "Control Engineer",
-            date: "2023 - 2024",
-            description: "Development of a martian rover for the ERC competition",
-            url: "https://www.teamdiana.it/",
-            bgColor: "hsl(221, 100%, 79%)",
-          },
-        ],
-        education: [
-          {
-            name: "Technical University of Denmark",
-            position: "M.Sc. Autonomous Systems",
-            date: "2024 - Present",
-            description: "1 year Erasmus+ exchange.",
-            url: "https://www.dtu.dk/",
-            bgColor: "hsl(19, 97%, 85%)",
-          },
-          {
-            name: "Politecnico di Torino",
-            position: "M.Sc. Computer Engineering",
-            date: "2023 - Present",
-            description: "Automation and Intelligent Cyber-Physical Systems - Current GPA: 29.23/30",
-            url: "https://www.polito.it/",
-            bgColor: "hsl(76, 39%, 72%)",
-          },
-          {
-            name: "Università degli Studi di Firenze",
-            position: "B.Sc. Computer Engineering",
-            date: "2020 - 2023",
-            description:
-              "Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence",
-            url: "https://www.unifi.it/",
-            bgColor: "hsl(41, 99%, 64%)",
-          },
-          {
-            name: "Università degli Studi di Firenze",
-            position: "CyberChallenge",
-            date: "2020 - 2023",
-            description:
-              "The first italian cybersecurity training program for talented university and high school students",
-            url: "https://cyberchallenge.it/",
-            bgColor: "hsl(221, 100%, 79%)",
-          },
-        ],
+            name: 'Employment',
+            color: 'hsl(177, 39%, 72%)',
+            items: portfolioData.employment,
+          }
+        ]
       };
 
       const h = loadTemplate("header.hbs", context, "header");
