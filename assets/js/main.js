@@ -33,6 +33,30 @@ function main() {
     window.scrollY > 50 ? header.classList.add("active") : header.classList.remove("active");
   };
   window.addEventListener("scroll", activeHeader);
+
+  // /**
+  //  * SET ACTIVE CLASS TO NAVLINK IF ANCHOR IS IN VIEW
+  //  */
+  // const sections = document.querySelectorAll(".has-anchor");
+  // const navLinks = document.querySelectorAll(".navbar-link");
+
+  // const setActiveNavLink = function () {
+  //   sections.forEach((section) => {
+  //     const rect = section.getBoundingClientRect();
+  //     const id = section.getAttribute("id");
+
+  //     if (rect.top <= 150 && rect.bottom >= 150) {
+  //       navLinks.forEach((link) => {
+  //         link.classList.remove("active");
+  //         if (link.getAttribute("href").includes(id)) {
+  //           link.classList.add("active");
+  //         }
+  //       });
+  //     }
+  //   });
+  // };
+
+  // window.addEventListener("scroll", setActiveNavLink);
 }
 
 
