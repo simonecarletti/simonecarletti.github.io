@@ -69,3 +69,15 @@ async function sendContactForm() {
     alert("❌ Network error. Please try again.");
   }
 }
+
+function setActive(elementId) {
+  const curr = document.querySelector(".navbar-link .active");
+  if (curr) {
+    curr.classList.remove("active");
+  }
+
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.classList.add("active");
+  }
+}
