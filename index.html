@@ -60,7 +60,18 @@
       const c = loadTemplate("contact.hbs", context, "contact");
       const f = loadTemplate("footer.hbs", context, "footer");
 
-      Promise.all([h, m, p, c, f]).then(() => (main(), setActive("homeLink")));
+      Promise.all([h, m, p, c, f]).then(() => {
+        main(); 
+        setActive("homeLink");
+
+        const anchor = window.location.hash;
+        if (anchor) {
+          const targetElement = document.querySelector(anchor);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
     </script>
 
     <!-- <script src="./assets/js/css-color-converter.js"></script> -->
