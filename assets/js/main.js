@@ -34,29 +34,34 @@ function main() {
   };
   window.addEventListener("scroll", activeHeader);
 
-  // /**
-  //  * SET ACTIVE CLASS TO NAVLINK IF ANCHOR IS IN VIEW
-  //  */
-  // const sections = document.querySelectorAll(".has-anchor");
-  // const navLinks = document.querySelectorAll(".navbar-link");
+  /**
+   * SET ACTIVE CLASS TO NAVLINK IF ANCHOR IS IN VIEW
+   */
+  const sections = document.querySelectorAll(".has-anchor");
+  const navLinks = document.querySelectorAll(".navbar-link");
 
-  // const setActiveNavLink = function () {
-  //   sections.forEach((section) => {
-  //     const rect = section.getBoundingClientRect();
-  //     const id = section.getAttribute("id");
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3, // Trigger when 60% of section is visible
+  }
 
-  //     if (rect.top <= 150 && rect.bottom >= 150) {
-  //       navLinks.forEach((link) => {
-  //         link.classList.remove("active");
-  //         if (link.getAttribute("href").includes(id)) {
-  //           link.classList.add("active");
-  //         }
-  //       });
-  //     }
-  //   });
-  // };
-
-  // window.addEventListener("scroll", setActiveNavLink);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(entry.target.id) || (entry.target.id === "main" && link.getAttribute("href") === "/")) {
+              link.classList.add("active");
+            }
+          });
+        } 
+      });
+    }, 
+    observerOptions,
+  );
+  sections.forEach((section) => observer.observe(section));
 }
 
 
