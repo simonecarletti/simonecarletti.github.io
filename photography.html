@@ -35,15 +35,21 @@
         const mainEl = document.querySelector("main");
 
         setTimeout(() => {
-          const extraPadding = '50px';
+          const extraPadding = '20px';
           const iframeHeight = window.innerHeight - footer.offsetHeight;
           mainEl.style = `padding-top: calc(${header.offsetHeight}px + ${extraPadding}); height: ${iframeHeight}px`;
         },300);
       }
     </script>
+
     <style>
+      main {
+        display: flex;
+        justify-content: center;
+      }
       iframe {
         width: 100%;
+        max-width: 900px;
         height: 100%;
       }
     </style>
