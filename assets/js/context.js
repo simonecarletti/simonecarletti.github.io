@@ -40,7 +40,7 @@ const experienceData = {
       importantInfo: "Graduated with 110/110 cum laude (with honors)",
       description:
         "Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence",
-      url: "https://www.unifi.it/",
+      url: "./assets/pdfs/bachelor_thesis.pdf",
     },
     {
       name: "Università degli Studi di Firenze",
