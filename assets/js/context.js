@@ -52,6 +52,12 @@ const experienceData = {
   ],
 };
 
+
+const blogPosts = [
+  "2024-10-26-bw-enlarging.md",
+];
+
+
 const context = {
   currYear: new Date().getFullYear(),
   clients: [
@@ -119,4 +125,5 @@ const context = {
       icon: "laptop-outline",
     },
   ],
+  blogPosts,
 };

@@ -34,6 +34,10 @@ function main() {
   };
   window.addEventListener("scroll", activeHeader);
 
+}
+
+
+function handleHeaderScroll() {
   /**
    * SET ACTIVE CLASS TO NAVLINK IF ANCHOR IS IN VIEW
    */
