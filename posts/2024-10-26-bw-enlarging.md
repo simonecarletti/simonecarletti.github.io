@@ -30,7 +30,7 @@ For each tray also prepare a clip: you'll use it to take out the paper from the 
 ## a) Developer
 Pour **DEKTOL** in the tray. Put as much as needed to at least submerge a piece of paper.
 
-![Developer tray and Dektol in the back](/assets/images/blog/1_developer.jpg){: width="60%" }
+![Developer tray and Dektol in the back](/assets/images/blog/1_developer.jpg)
 
 
 <br>
@@ -38,7 +38,7 @@ Pour **DEKTOL** in the tray. Put as much as needed to at least submerge a piece 
 ## b) Stopper
 To create the stopper wash put a bit (1/2 tablespoons) of Acetic acid (the bottle behind the tray) and fill the rest with water.
 
-![Stopper tray and chemical in the back](/assets/images/blog/2_stopper.jpg){: width="60%" }
+![Stopper tray and chemical in the back](/assets/images/blog/2_stopper.jpg)
 
 
 <br>
@@ -46,7 +46,7 @@ To create the stopper wash put a bit (1/2 tablespoons) of Acetic acid (the bottl
 ## c) Fixer
 Pour the whole bottle of fixer in the basin.
 
-![Fixer tray and chemical in the back](/assets/images/blog/3_fixer.jpg){: width="60%" }
+![Fixer tray and chemical in the back](/assets/images/blog/3_fixer.jpg)
 
 
 <br>
@@ -54,7 +54,7 @@ Pour the whole bottle of fixer in the basin.
 ## d) Wash
 Fill with water and add just a couple of drop of that soap you see behind the tray (used to break surface tension).
 
-![Wash tray and chemical in the back](/assets/images/blog/4_wash.jpg){: width="60%" }
+![Wash tray and chemical in the back](/assets/images/blog/4_wash.jpg)
 
 
 
@@ -66,7 +66,7 @@ Fill with water and add just a couple of drop of that soap you see behind the tr
 # 2. Prepare the film
 
 Choose the right film holder, put the negative in (emulsion side, aka matte side, down), align the correct frame and close. If you placed the the film correctly, later you should see the image rotated 180 degrees, but not flipped (e.g. the text will be readable).
-![Film holder](/assets/images/blog/enlarger_holder.jpg){: width="60%" }
+![Film holder](/assets/images/blog/enlarger_holder.jpg)
 
 Now you'll need to insert the holder into the enlarger: make sure that the lever is up (so that you can insert the film holder), than insert it into the machine and close the lever to secure the holder into place. 
 
@@ -83,7 +83,7 @@ In this step you'll also frame/crop the image as you desire. Remember to set the
 
 ![Enlarger right side](/assets/images/blog/enlarger_right.jpg)
 ![Enlarger controller](/assets/images/blog/controller.jpg)
-![Paper holder and magnifier](/assets/images/blog/paper_holder.jpg){: width="70%", pollo="33" }
+![Paper holder and magnifier](/assets/images/blog/paper_holder.jpg)
 
 
 
@@ -99,7 +99,7 @@ Before printing your full size image you'll want to test exposure. First prepare
 
 Now, take one of the test strips and place it in an important part of the image (it can be useful to mark this part with an object, like a pencil or scissors, since now the enlarger light is off and you're not seeing the picture).
 
-![Test strip](/assets/images/blog/test_strip.jpg){: width="40%" }
+![Test strip](/assets/images/blog/test_strip.jpg)
 
 
 Now we'll expose the test strip several times:
@@ -145,7 +145,7 @@ Now that you have your developed test strip we can choose the desired exposure t
 The only addition now is to wipe down a bit of liquid from the paper and than put it to dry (use the bottommost drying rack. They're under the desk.)
 
 
-![Wipe down](/assets/images/blog/wipe_down.jpg){: width="80%" }
+![Wipe down](/assets/images/blog/wipe_down.jpg)
 
 
 
