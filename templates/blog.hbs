@@ -7,16 +7,16 @@
         <li>
           <div class="blog-card">
             <div class="card-banner img-holder" style="--width: 800; --height: 540;">
-              <img
-                src="{{this.image}}"
-                width="800"
-                height="540"
-                loading="lazy"
-                class="img-cover"
-              />
+              <a href="#{{@key}}" aria-label="Read article">
+                <img
+                  src="{{this.image}}"
+                  width="800"
+                  height="540"
+                  loading="lazy"
+                  class="img-cover"
+                />
 
-              <a href="#{{@key}}" class="btn-icon" aria-label="Read article" onclick="">
-                <ion-icon name="arrow-forward-sharp" aria-hidden="true"></ion-icon>
+                <ion-icon name="arrow-forward-sharp" class="btn-icon" aria-hidden="true"></ion-icon>
               </a>
             </div>
 

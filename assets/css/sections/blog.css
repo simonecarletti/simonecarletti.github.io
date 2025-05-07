@@ -8,11 +8,17 @@
 }
 
 .blog-list,
-.blog-card { display: grid; }
+.blog-card {
+  display: grid;
+}
 
-.blog-list { gap: 50px; }
+.blog-list {
+  gap: 50px;
+}
 
-.blog-card { gap: 25px; }
+.blog-card {
+  gap: 25px;
+}
 
 .blog-card .card-banner {
   position: relative;
@@ -56,18 +62,74 @@
   margin-block-end: 18px;
 }
 
-.blog-card .card-text { margin-block: 10px 25px; }
+.blog-card .card-text {
+  margin-block: 10px 25px;
+}
 
+article,
+article > div,
+.section {
+  height: 100%;
+}
+.hidden {
+  display: none;
+}
+
+.title-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.title-bar a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+  color: var(--color-text);
+  font-size: 2rem;
+}
 
 /*-----------------------------------*\
   #POST
 \*-----------------------------------*/
 
-#blog-article img {
-  width: 500px;
+#blog-article-content li {
+  list-style: unset;
 }
 
+#blog-article-content li,
+#blog-article-content ol,
+#blog-article-content ul,
+#blog-article-content hr,
+#blog-article-content p,
+#blog-article-content h1,
+#blog-article-content h2,
+#blog-article-content h3,
+#blog-article-content h4,
+#blog-article-content h5,
+#blog-article-content h6 {
+  padding: revert;
+  margin: revert;
+}
 
+#blog-article-content img {
+  object-fit: contain;
+  max-height: 600px;
+  max-width: min(80vw, 800px);
+  margin: 40px auto;
+  display: block;
+}
+
+#blog-article-content p {
+  font-size: 17px; 
+  line-height: 28px;
+}
+
+#blog-article-content h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
 
 /*-----------------------------------*\
   #MEDIA QUERIES
@@ -78,19 +140,27 @@
  */
 
 @media (min-width: 768px) {
-
   .blog-card {
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
-  .blog-list > li:nth-child(2n) .card-banner { order: 1; }
+  .blog-list > li:nth-child(2n) .card-banner {
+    order: 1;
+  }
 
   .blog-card > * {
     width: 80%;
     margin-inline: auto;
   }
 
-  .blog-card .card-text { margin-block-start: 20px; }
-
+  .blog-card .card-text {
+    margin-block-start: 20px;
+  }
 }
+
+/* @media (min-width: 1200px) {
+  .blog .container {
+    max-width: 800px;
+  }
+} */
