@@ -53,9 +53,14 @@ const experienceData = {
 };
 
 
-const blogPosts = [
-  "2024-10-26-bw-enlarging.md",
-];
+const blogPosts = {
+  "2024-10-26-bw-enlarging": {
+    title: "How to enlarge B&W negatives",
+    description: "",
+    category: "photography",
+    image: "./assets/images/blog/wipe_down.jpg",
+  }
+};
 
 
 const context = {

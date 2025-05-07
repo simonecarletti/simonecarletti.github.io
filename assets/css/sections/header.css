@@ -1,6 +1,10 @@
-.header { background-color: transparent; }
+.header .logo {
+  margin: -10px 0;
+}
 
-.header.active { background-color: var(--white); }
+.header.active { 
+  background-color: var(--white); 
+}
 
 .download-cv-btn-navbar {
   background-color: var(--orange-red);

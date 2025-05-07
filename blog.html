@@ -24,14 +24,39 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/context.js"></script>
   
-    <!-- Markdown parser -->
+    <!-- Custom js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="./assets/js/front-matter.js"></script>
+    <script src="./assets/js/blog-post.js"></script>
 
     <!-- Custom css link -->
     <link rel="stylesheet" href="./assets/css/require.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/sections/blog.css" />
+
+    <style>
+      article, article > div, .section {
+        height: 100%;
+      }
+      .hidden {
+        display: none;
+      }
+
+      .title-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .title-bar a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 1rem;
+        color: var(--color-text);
+        font-size: 2rem;
+      }
+    </style>
   </head>
 
   <body onresize="setIframeStyle()">
@@ -48,8 +73,22 @@
     <div id="header"></div>
     <main>
       <article>
-        <section class="section blog has-anchor">
-          <div class="container" id="blog-content"></div>
+        <div id="blog-list"></div>
+
+        <section class="section blog has-anchor hidden" id="blog-article">
+          <div class="container">
+            <div class="title-bar section-title">
+              <a href="#" class="btn-icon" aria-label="Read article" onclick="">
+                <ion-icon name="arrow-back-sharp" aria-hidden="true"></ion-icon>
+              </a>
+
+              <h2 class="title-md" id="blog-article-title">
+                <!-- TITLE IS PUT HERE BY JS -->
+              </h2>
+            </div>
+
+            <div id="blog-article-content"></div>
+          </div>
         </section>
       </article>
     </main>
@@ -57,23 +96,17 @@
   
     <script>
       context.activePage = "blog";
+
       const h = loadTemplate("header.hbs", context, "header");
+      const b = loadTemplate("blog.hbs", context, "blog-list");
       const f = loadTemplate("footer.hbs", context, "footer");
 
-      Promise.all([h, f]).then(() => {
+      Promise.all([h, b, f]).then(() => {
         main();
         setActive("blogLink");
 
-        console.log(context.blogPosts);
-
-        fetch('posts/2024-10-26-bw-enlarging.md')
-          .then(res => res.text())
-          .then(md => {
-            const { attributes, body } = parseFrontMatter(md);
-            console.log(attributes);
-            
-            document.getElementById('blog-content').innerHTML = marked.parse(body);
-          });
+        loadPost();
+        window.addEventListener('hashchange', () => loadPost());
       });
     </script>
 

@@ -1,0 +1,37 @@
+<section class="section blog has-anchor">
+  <div class="container">
+    <h2 class="section-title headline-md text-center" id="blog-label">Latest Articles</h2>
+
+    <ul class="blog-list">
+      {{#each blogPosts}}
+        <li>
+          <div class="blog-card">
+            <div class="card-banner img-holder" style="--width: 800; --height: 540;">
+              <img
+                src="{{this.image}}"
+                width="800"
+                height="540"
+                loading="lazy"
+                class="img-cover"
+              />
+
+              <a href="#{{@key}}" class="btn-icon" aria-label="Read article" onclick="">
+                <ion-icon name="arrow-forward-sharp" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+
+            <div class="card-content">
+              <span class="chip label-md">{{this.category}}</span>
+
+               <a href="#{{@key}}"><h3 class="title-md" style="cursor: pointer;">{{this.title}}</h3></a>
+
+              <p class="card-text">{{this.description}}</p>
+
+              <a href="#{{@key}}" class="btn btn-primary">Read Article</a>
+            </div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

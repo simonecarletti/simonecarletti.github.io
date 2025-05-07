@@ -59,6 +59,13 @@
 .blog-card .card-text { margin-block: 10px 25px; }
 
 
+/*-----------------------------------*\
+  #POST
+\*-----------------------------------*/
+
+#blog-article img {
+  width: 500px;
+}
 
 
 

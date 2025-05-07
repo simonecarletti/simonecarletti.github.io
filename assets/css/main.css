@@ -21,6 +21,16 @@
 @import url("./sections/hero.css");
 
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 
 .make-color-white {
   filter: invert(100%) sepia(100%) saturate(0%);

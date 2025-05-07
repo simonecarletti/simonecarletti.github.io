@@ -1,11 +1,3 @@
----
-layout: post
-title:  "How to enlarge B&W negatives"
-subtitle: ""
-categories: ["photography"]
----
-
-
 In this short guide I'll summarize the procedure needed to print images from **black and white** negatives. <br><br>
 
 ⚠️ Remember:<br>
@@ -91,7 +83,7 @@ In this step you'll also frame/crop the image as you desire. Remember to set the
 
 ![Enlarger right side](/assets/images/blog/enlarger_right.jpg)
 ![Enlarger controller](/assets/images/blog/controller.jpg)
-![Paper holder and magnifier](/assets/images/blog/paper_holder.jpg){: width="70%" }
+![Paper holder and magnifier](/assets/images/blog/paper_holder.jpg){: width="70%", pollo="33" }
 
 
 
