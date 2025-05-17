@@ -59,6 +59,12 @@ const blogPosts = {
     description: "",
     category: "photography",
     image: "./assets/images/blog/wipe_down.jpg",
+  },
+  "2025-05-17-c41-developing": {
+    title: "How to develop color negative film (C41)",
+    description: "",
+    category: "photography",
+    image: "./assets/images/blog/2025-05-17-c41-developing/machine.jpg",
   }
 };
 
