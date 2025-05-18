@@ -5,6 +5,7 @@ In this short guide I'll summarize the procedure needed to develop **color negat
 
 # 1. Prepare film
 Before anything else, you'll need to load your film. In total darkness, load your film roll onto the spiral reel and place it inside the Jobo tank. Close the tank securely—once it's sealed, everything else can be done in the light.
+Make sure to use the lid with the gear (so that it can be fitted into the machine).
 
 ![](/assets/images/blog/2025-05-17-c41-developing/jobo2.jpg)
 ![](/assets/images/blog/2025-05-17-c41-developing/jobo1.jpg)
@@ -33,7 +34,7 @@ Before anything else, you'll need to load your film. In total darkness, load you
    Slowly pour warm water into the Jobo tank. Lift the plastic tube while pouring. Fill with the amount marked on your Jobo tank, and do two quick washes (a couple of minutes each).
 
 2. **Developer**:  
-   - Measure the correct amount and confirm it’s at 38°C.  
+   - Measure the correct amount and confirm it’s at the right temperature (e.g. 38°C).
    - **Important**: Empty the tank of water before adding the developer.  
    - Start the timer **midway through pouring** the developer into the tank.  
    - Time depends on how used your developer is—refer to your kit's instructions and the usage log.
