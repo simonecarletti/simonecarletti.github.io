@@ -19,9 +19,16 @@ const experienceData = {
   ],
   education: [
     {
+      name: "École Polytechnique Fédérale de Lausanne (EPFL)",
+      position: "Master Thesis",
+      date: "2025 - 2026",
+      description: "L1-Adaptive augmentation for robust morphing-wing drone flight control",
+      url: "https://www.epfl.ch/",
+    },
+    {
       name: "Technical University of Denmark",
       position: "M.Sc. Autonomous Systems",
-      date: "2024 - Present",
+      date: "2024 - 2025",
       description: "1 year Erasmus+ exchange.",
       url: "https://www.dtu.dk/",
     },
