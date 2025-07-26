@@ -1,8 +1,15 @@
 # Personal experience
 
+
+
 ## How to deploy
 
-This pushes into the simonecarletti.github.io repository
+When you first clone the repo, add the following remote:
+```sh
+git remote add deploy https://github.com/simonecarletti/simonecarletti.github.io.git
+```
+
+Then, to deploy just do:
 
 ```sh
 git push deploy
