@@ -51,12 +51,14 @@
         color: var(--white);
       }
 
-      .navbar {
-        border-block: 2px solid var(--white_a10);
-      }
-
       .header.active {
         box-shadow: 0 2px 2px hsla(0, 0%, 90%, 0.1);
+      }
+
+      @media (max-width: 992px) {
+        .navbar {
+          border-block: 2px solid var(--white_a10);
+        }
       }
 
       @media (min-width: 992px) {
