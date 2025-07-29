@@ -55,6 +55,13 @@
         box-shadow: 0 2px 2px hsla(0, 0%, 90%, 0.1);
       }
 
+      @media (max-width: 600px) {
+        .photography {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
       @media (max-width: 992px) {
         .navbar {
           border-block: 2px solid var(--white_a10);
@@ -127,7 +134,7 @@
               // Remove hashtags from captions and filter excluded images
               const filteredData = data.map((item) => {
                 if (item.caption) {
-                  item.caption = item.caption.split("#")[0].trim().replace(/\n/g, '<br>');
+                  item.caption = item.caption.split("#")[0].trim().replace(/\n/g, "<br>");
                 }
                 if (item.taken_at) {
                   item.taken_at = new Date(item.taken_at).toLocaleDateString("en-UK", {
