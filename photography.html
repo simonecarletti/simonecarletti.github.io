@@ -28,29 +28,10 @@
     <link rel="stylesheet" href="./assets/css/require.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <script>
-      function setIframeStyle() {
-        const header = document.querySelector("header");
-        const footer = document.querySelector("footer");
-        const mainEl = document.querySelector("main");
-
-        setTimeout(() => {
-          const extraPadding = '20px';
-          const iframeHeight = window.innerHeight - footer.offsetHeight;
-          mainEl.style = `padding-top: calc(${header.offsetHeight}px + ${extraPadding}); height: ${iframeHeight}px`;
-        },300);
-      }
-    </script>
-
     <style>
       main {
         display: flex;
         justify-content: center;
-      }
-      iframe {
-        width: 100%;
-        max-width: 900px;
-        height: 100%;
       }
     </style>
   </head>
@@ -68,23 +49,36 @@
     <!-------------->
     <div id="header"></div>
     <main>
-      <iframe src="https://www.instagram.com/simone_carletti/embed/" frameborder="0"></iframe>
+      <section class="section photography has-anchor">
+        <div id="photo-grid"></div>
+      </section>
     </main>
     <div id="footer"></div>
 
     <script>
+    let instagramData = [];
+    fetch('./assets/images/instagram/instagram.json')
+      .then(response => response.json())
+      .then(data => {
+        instagramData = data;
+        console.log('Instagram data loaded:', instagramData);
+        context.instagramPosts = instagramData;
+      })
+      .catch(error => {
+        console.error('Error loading instagram.json:', error);
+      });
+
       context.activePage = "photography";
       const h = loadTemplate("header.hbs", context, "header");
       const f = loadTemplate("footer.hbs", context, "footer");
+      const p = loadTemplate("photo-grid.hbs", context, "photo-grid");
 
       Promise.all([h, f]).then(() => {
         main();
-        setIframeStyle();
         setActive("photoLink");
       });
     </script>
 
-    <!-- <script src="./assets/js/css-color-converter.js"></script> -->
     <!-- Ionicon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

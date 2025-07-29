@@ -40,14 +40,14 @@ cl = Client()
 cl.login(USERNAME, PASSWORD)
 user_id = cl.user_id_from_username(USERNAME)
 
-MEDIA_FOLDER = os.path.join(DEST_ROOT, MEDIA_FOLDER)
-METADATA_FILE = os.path.join(DEST_ROOT, MEDIA_FOLDER, METADATA_FILE)
+MEDIA_FOLDER_FULL = os.path.join(DEST_ROOT, MEDIA_FOLDER)
+METADATA_FILE_FULL = os.path.join(DEST_ROOT, MEDIA_FOLDER_FULL, METADATA_FILE)
 
 if not os.path.exists(DEST_ROOT):
     raise FileNotFoundError(f"Destination root directory '{DEST_ROOT}' does not exist.")
 
 
-os.makedirs(MEDIA_FOLDER, exist_ok=True)
+os.makedirs(MEDIA_FOLDER_FULL, exist_ok=True)
 
 
 ################### FETCH ####################
@@ -68,15 +68,15 @@ for _ in range(max_pages):
     time.sleep(1)  # to avoid rate-limiting
 
 # Get already downloaded post PKs by scanning filenames
-existing_files = os.listdir(MEDIA_FOLDER)
+existing_files = os.listdir(MEDIA_FOLDER_FULL)
 downloaded_pks = {f.split("__")[0] for f in existing_files if "__" in f and f.endswith(".jpg")}
 
 
 ################## DOWNLOAD ##################
 
 # Load existing metadata (pk keys)
-if os.path.exists(METADATA_FILE):
-    with open(METADATA_FILE, "r", encoding="utf-8") as f:
+if os.path.exists(METADATA_FILE_FULL):
+    with open(METADATA_FILE_FULL, "r", encoding="utf-8") as f:
         metadata_summary = json.load(f)
 else:
     metadata_summary = []
@@ -104,7 +104,7 @@ for media in all_medias:
 
     for i, url in enumerate(image_candidates, 1):
         filename = f"{pk}__{i}.jpg"
-        filepath = os.path.join(MEDIA_FOLDER, filename)
+        filepath = os.path.join(MEDIA_FOLDER_FULL, filename)
         try:
             r = requests.get(url)
             if r.ok:
@@ -130,7 +130,7 @@ for media in all_medias:
 #################### SAVE ####################
 
 # Save summary metadata
-with open(METADATA_FILE, "w", encoding="utf-8") as f:
+with open(METADATA_FILE_FULL, "w", encoding="utf-8") as f:
     json.dump(list(metadata_by_pk.values()), f, ensure_ascii=False, indent=4)
 
-print(f"\n✅ Done. Images saved in '{MEDIA_FOLDER}', metadata saved in '{METADATA_FILE}'")
+print(f"\n✅ Done. Images saved in '{MEDIA_FOLDER_FULL}', metadata saved in '{METADATA_FILE_FULL}'")
