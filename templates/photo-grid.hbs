@@ -10,7 +10,8 @@
 </div> 
 
 {{#if selectedImage}}
-    <div id="photo-grid-picture-viewer">
+    {{!-- <div id="photo-grid-picture-viewer"> --}}
+    <div id="photo-grid-picture-viewer" onclick="if(event.target === this) closePictureViewer()">
         <div class="picture-viewer__content">
             <img src="{{selectedImage.src}}" alt="{{selectedImage.caption}}" />
 

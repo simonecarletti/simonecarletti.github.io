@@ -16,6 +16,7 @@
 }
 
 .photo-grid .photo {
+    cursor: pointer;
     overflow: hidden;
     display: flex;
     flex-direction: column;
