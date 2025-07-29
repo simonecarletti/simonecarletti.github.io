@@ -92,6 +92,27 @@
     <div id="footer"></div>
 
     <script>
+      // Session.set('selectedImage', null);
+      context.selectedImage = null;
+
+      function onSelectImage(pk, image) {
+        // Find the post by primary key (pk)
+        const post = context.posts.find((p) => p.pk === pk);
+
+        // const selectedImage = {
+        context.selectedImage = {
+          src: `./assets/images/${context.postsRoot}${image}`,
+          ...post,
+        };
+
+        loadTemplate("photo-grid.hbs", context, "photo-grid");
+      }
+
+      function closePictureViewer() {
+        context.selectedImage = null;
+        loadTemplate("photo-grid.hbs", context, "photo-grid");
+      }
+
       // Fetch the list of images to exclude
       fetch("./assets/images/instagram/exclude.json")
         .then((response) => response.json())
@@ -115,6 +136,7 @@
 
               context.posts = filteredData;
               context.postsRoot = "instagram/";
+              context.selectedImage = null;
 
               context.activePage = "photography";
               const h = loadTemplate("header.hbs", context, "header");

@@ -1,10 +1,23 @@
 <div class="photo-grid">
     {{#each posts}}
         {{#each this.images}}
-            <a class="photo" href="{{../url}}" target="_blank" rel="noopener noreferrer">
+            {{!-- <a class="photo" href="{{../url}}" target="_blank" rel="noopener noreferrer"> --}}
+            <a class="photo" rel="noopener noreferrer" onclick="onSelectImage('{{../this.pk}}', '{{this}}')">
                 <img src="./assets/images/{{../../postsRoot}}{{this}}" alt="{{../caption}}" />
                 {{!-- <p class="caption">{{../caption}}</p> --}}
             </a>
         {{/each}}
     {{/each}}
 </div> 
+
+{{#if selectedImage}}
+    <div id="photo-grid-picture-viewer">
+        <div class="picture-viewer__content">
+            <div style="display: flex; justify-content: flex-end; cursor: pointer;" onclick="closePictureViewer()">
+                <ion-icon name="close-outline" style="color: black; font-size: 2em;"></ion-icon>
+            </div>
+            <img src="{{selectedImage.src}}" alt="{{selectedImage.caption}}" />
+            <p class="caption">{{selectedImage.caption}}</p>
+        </div>
+    </div>
+{{/if}}
