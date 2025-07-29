@@ -60,9 +60,14 @@
     fetch('./assets/images/instagram/instagram.json')
       .then(response => response.json())
       .then(data => {
-        instagramData = data;
-        console.log('Instagram data loaded:', instagramData);
-        context.instagramPosts = instagramData;
+        // Remove hashtags from captions
+        data.forEach(item => {
+          if (item.caption) {
+            item.caption = item.caption.split('#')[0].trim();
+          }
+        });
+
+        context.instagramPosts = data;
       })
       .catch(error => {
         console.error('Error loading instagram.json:', error);

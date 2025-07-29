@@ -1,8 +1,10 @@
 <div class="container photo-grid">
     {{#each instagramPosts }}
-        <div class="photo">
-            <img src="./assets/images/{{this.images.[0]}}" alt="{{this.caption}}" />
-            <p>{{this.caption}}</p>
-        </div>
+        {{#each this.images}}
+            <div class="photo">
+            <img src="./assets/images/{{this}}" alt="{{../caption}}" />
+            {{!-- <p class="caption">{{../caption}}</p> --}}
+            </div>
+        {{/each}}
     {{/each}}
 </div> 
