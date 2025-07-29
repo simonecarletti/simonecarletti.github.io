@@ -4,7 +4,6 @@
             {{!-- <a class="photo" href="{{../url}}" target="_blank" rel="noopener noreferrer"> --}}
             <a class="photo" rel="noopener noreferrer" onclick="onSelectImage('{{../this.pk}}', '{{this}}')">
                 <img src="./assets/images/{{../../postsRoot}}{{this}}" alt="{{../caption}}" />
-                {{!-- <p class="caption">{{../caption}}</p> --}}
             </a>
         {{/each}}
     {{/each}}
@@ -13,11 +12,40 @@
 {{#if selectedImage}}
     <div id="photo-grid-picture-viewer">
         <div class="picture-viewer__content">
-            <div style="display: flex; justify-content: flex-end; cursor: pointer;" onclick="closePictureViewer()">
-                <ion-icon name="close-outline" style="color: black; font-size: 2em;"></ion-icon>
-            </div>
             <img src="{{selectedImage.src}}" alt="{{selectedImage.caption}}" />
-            <p class="caption">{{selectedImage.caption}}</p>
+
+            <div class="right-box">
+                <div style="display: flex; justify-content: flex-end; cursor: pointer;" onclick="closePictureViewer()">
+                    <ion-icon name="close-outline" style="font-size: 2em; padding: 10px"></ion-icon>
+                </div>
+
+                {{#if selectedImage.location}}
+                    <div class="info-entry">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <p>{{selectedImage.location}}</p>
+                    </div>
+                {{/if}}
+                {{#if selectedImage.taken_at}}
+                    <div class="info-entry">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        <p>{{selectedImage.taken_at}}</p>
+                    </div>
+                {{/if}}
+                {{#if selectedImage.caption}}
+                    <div class="info-entry">
+                        {{!-- <ion-icon name="chatbox-outline" style="align-self: flex-start; padding-top: 2px;"></ion-icon> --}}
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                        <p class="caption-box">{{{selectedImage.caption}}}</p>
+                    </div>
+                {{/if}}
+
+                <div class="fill" style="flex-grow: 1;"></div>
+
+                <a class="info-entry" style="padding: 20px 25px" href="{{selectedImage.url}}" target="_blank" rel="noopener noreferrer">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <p>Open Instagram post</p>
+                </a>
+            </div>
         </div>
     </div>
 {{/if}}

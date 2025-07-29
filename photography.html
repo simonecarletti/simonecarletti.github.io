@@ -92,14 +92,17 @@
     <div id="footer"></div>
 
     <script>
-      // Session.set('selectedImage', null);
       context.selectedImage = null;
 
       function onSelectImage(pk, image) {
-        // Find the post by primary key (pk)
         const post = context.posts.find((p) => p.pk === pk);
 
-        // const selectedImage = {
+        const isMobile = window.innerWidth < 992;
+        if (isMobile) {
+          window.open(post.url, "_blank");
+          return;
+        }
+
         context.selectedImage = {
           src: `./assets/images/${context.postsRoot}${image}`,
           ...post,
@@ -124,7 +127,15 @@
               // Remove hashtags from captions and filter excluded images
               const filteredData = data.map((item) => {
                 if (item.caption) {
-                  item.caption = item.caption.split("#")[0].trim();
+                  item.caption = item.caption.split("#")[0].trim().replace(/\n/g, '<br>');
+                  console.log(item.caption);
+                }
+                if (item.taken_at) {
+                  item.taken_at = new Date(item.taken_at).toLocaleDateString("en-UK", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  });
                 }
 
                 item.images = item.images.filter((image) => {
