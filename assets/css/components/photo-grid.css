@@ -1,13 +1,18 @@
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 5px;
     padding: 10px;
 
     border-radius: 8px;
     overflow: hidden;
-
     transition: transform 0.3s ease;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        /* gap: 20px; */
+    }
 }
 
 .photo-grid .photo {
