@@ -128,7 +128,6 @@
               const filteredData = data.map((item) => {
                 if (item.caption) {
                   item.caption = item.caption.split("#")[0].trim().replace(/\n/g, '<br>');
-                  console.log(item.caption);
                 }
                 if (item.taken_at) {
                   item.taken_at = new Date(item.taken_at).toLocaleDateString("en-UK", {
