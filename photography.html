@@ -29,7 +29,12 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
 
     <style>
-      .header, main {
+      .photography {
+        padding-block-start: calc(var(--section-padding) + 60px);
+      }
+
+      .header,
+      main {
         /* background-color: #2e2e2e; */
         /* background-color: var(--jet) !important; */
         background-color: var(--black) !important;
@@ -41,7 +46,8 @@
         box-shadow: 0 2px 2px hsla(0, 0%, 90%, 0.1);
       }
 
-      .label-lg {
+      .label-lg,
+      .section-title {
         color: var(--white);
       }
 
@@ -52,7 +58,7 @@
     </style>
   </head>
 
-  <body onresize="setIframeStyle()">
+  <body>
     <!--------------->
     <!-- PRELOADER -->
     <!--------------->
@@ -65,7 +71,9 @@
     <!-------------->
     <div id="header"></div>
     <main>
-      <section class="section photography has-anchor">
+      <section class="section photography container has-anchor">
+        <h2 class="section-title headline-md text-center">MY PHOTOS</h2>
+
         <div id="photo-grid"></div>
       </section>
     </main>
@@ -73,25 +81,32 @@
 
     <script>
       // Fetch the list of images to exclude
-      fetch('./assets/images/instagram/exclude.json')
-        .then(response => response.json())
-        .then(excludeList => {
+      fetch("./assets/images/instagram/exclude.json")
+        .then((response) => response.json())
+        .then((excludeList) => {
 
           // Fetch the Instagram data
-          return fetch('./assets/images/instagram/instagram.json')
-            .then(response => response.json())
-            .then(data => {
+          return fetch("./assets/images/instagram/instagram.json")
+            .then((response) => response.json())
+            .then((data) => {
               // Remove hashtags from captions and filter excluded images
               const filteredData = data
-                .filter(item => !excludeList.includes(item.image))
-                .map(item => {
+                .map((item) => {
                   if (item.caption) {
-                    item.caption = item.caption.split('#')[0].trim();
+                    item.caption = item.caption.split("#")[0].trim();
                   }
+
+                  item.images = item.images.filter((image) => {
+                    return !excludeList.includes(image);
+                  });
+
                   return item;
                 });
 
-              context.instagramPosts = filteredData;
+              context.posts = filteredData;
+              context.postsRoot = 'instagram/';
+
+              console.log(filteredData);
 
               context.activePage = "photography";
               const h = loadTemplate("header.hbs", context, "header");
@@ -102,7 +117,7 @@
                 main();
                 setActive("photoLink");
               });
-          });
+            });
         });
     </script>
 

@@ -122,7 +122,7 @@ for media in all_medias:
         "taken_at": media.taken_at.isoformat(),
         "location": media.location.name if media.location else None,
         "caption": media.caption_text or "",
-        "images": [f"{MEDIA_FOLDER}/{pk}__{i}.jpg" for i in range(1, len(image_candidates) + 1)],
+        "images": [f"{pk}__{i}.jpg" for i in range(1, len(image_candidates) + 1)],
         "url": f"https://www.instagram.com/p/{media.code}/",
     }
 
