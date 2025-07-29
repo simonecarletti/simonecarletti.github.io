@@ -33,24 +33,37 @@
         padding-block-start: calc(var(--section-padding) + 60px);
       }
 
-      .header,
       main {
-        background-color: var(--black) !important;
+        display: flex;
+        justify-content: center;
+      }
+
+      .header,
+      main,
+      .navbar {
         color: var(--white) !important;
+        background-color: var(--black) !important;
+      }
+
+      .label-lg,
+      .section-title,
+      .nav-toggle-btn {
+        color: var(--white);
+      }
+
+      .navbar {
+        border-block: none;
       }
 
       .header.active {
         box-shadow: 0 2px 2px hsla(0, 0%, 90%, 0.1);
       }
 
-      .label-lg,
-      .section-title {
-        color: var(--white);
-      }
-
-      main {
-        display: flex;
-        justify-content: center;
+      @media (min-width: 992px) {
+        .header {
+          background-color: var(--black) !important;
+          color: var(--white) !important;
+        }
       }
     </style>
   </head>
@@ -81,27 +94,25 @@
       fetch("./assets/images/instagram/exclude.json")
         .then((response) => response.json())
         .then((excludeList) => {
-
           // Fetch the Instagram data
           return fetch("./assets/images/instagram/instagram.json")
             .then((response) => response.json())
             .then((data) => {
               // Remove hashtags from captions and filter excluded images
-              const filteredData = data
-                .map((item) => {
-                  if (item.caption) {
-                    item.caption = item.caption.split("#")[0].trim();
-                  }
+              const filteredData = data.map((item) => {
+                if (item.caption) {
+                  item.caption = item.caption.split("#")[0].trim();
+                }
 
-                  item.images = item.images.filter((image) => {
-                    return !excludeList.includes(image);
-                  });
-
-                  return item;
+                item.images = item.images.filter((image) => {
+                  return !excludeList.includes(image);
                 });
 
+                return item;
+              });
+
               context.posts = filteredData;
-              context.postsRoot = 'instagram/';
+              context.postsRoot = "instagram/";
 
               context.activePage = "photography";
               const h = loadTemplate("header.hbs", context, "header");
