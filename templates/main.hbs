@@ -34,9 +34,9 @@
             <li class="slider-item">
                 <a href="{{this.url}}" target="_blank">
                     {{#unless skipColorChange}}
-                    <img class="make-color-white" src="{{this.src}}" alt="clients" />
+                    <img class="make-color-white" style="{{this.style}}" src="{{this.src}}" alt="clients" />
                     {{else}}
-                    <img src="{{this.src}}" alt="clients" />
+                    <img src="{{this.src}}" style="{{this.style}}" alt="clients" />
                     {{/unless}}
                 </a>
             </li>

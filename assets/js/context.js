@@ -84,6 +84,11 @@ const context = {
       src: "./assets/images/clients/genomedics.png",
     },
     {
+      url: "https://www.epfl.ch/",
+      src: "./assets/images/clients/epfl.svg",
+      style: 'max-width: 130px',
+    },
+    {
       url: "https://www.dtu.dk/",
       src: "./assets/images/clients/dtu.png",
       skipColorChange: true,
