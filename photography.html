@@ -29,6 +29,22 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
 
     <style>
+      .header, main {
+        /* background-color: #2e2e2e; */
+        /* background-color: var(--jet) !important; */
+        background-color: var(--black) !important;
+        color: var(--white) !important;
+      }
+
+      .header.active {
+        /* background-color: var(--jet) !important; */
+        box-shadow: 0 2px 2px hsla(0, 0%, 90%, 0.1);
+      }
+
+      .label-lg {
+        color: var(--white);
+      }
+
       main {
         display: flex;
         justify-content: center;
@@ -56,32 +72,38 @@
     <div id="footer"></div>
 
     <script>
-    let instagramData = [];
-    fetch('./assets/images/instagram/instagram.json')
-      .then(response => response.json())
-      .then(data => {
-        // Remove hashtags from captions
-        data.forEach(item => {
-          if (item.caption) {
-            item.caption = item.caption.split('#')[0].trim();
-          }
+      // Fetch the list of images to exclude
+      fetch('./assets/images/instagram/exclude.json')
+        .then(response => response.json())
+        .then(excludeList => {
+
+          // Fetch the Instagram data
+          return fetch('./assets/images/instagram/instagram.json')
+            .then(response => response.json())
+            .then(data => {
+              // Remove hashtags from captions and filter excluded images
+              const filteredData = data
+                .filter(item => !excludeList.includes(item.image))
+                .map(item => {
+                  if (item.caption) {
+                    item.caption = item.caption.split('#')[0].trim();
+                  }
+                  return item;
+                });
+
+              context.instagramPosts = filteredData;
+
+              context.activePage = "photography";
+              const h = loadTemplate("header.hbs", context, "header");
+              const f = loadTemplate("footer.hbs", context, "footer");
+              const p = loadTemplate("photo-grid.hbs", context, "photo-grid");
+
+              Promise.all([h, f, p]).then(() => {
+                main();
+                setActive("photoLink");
+              });
+          });
         });
-
-        context.instagramPosts = data;
-      })
-      .catch(error => {
-        console.error('Error loading instagram.json:', error);
-      });
-
-      context.activePage = "photography";
-      const h = loadTemplate("header.hbs", context, "header");
-      const f = loadTemplate("footer.hbs", context, "footer");
-      const p = loadTemplate("photo-grid.hbs", context, "photo-grid");
-
-      Promise.all([h, f]).then(() => {
-        main();
-        setActive("photoLink");
-      });
     </script>
 
     <!-- Ionicon -->

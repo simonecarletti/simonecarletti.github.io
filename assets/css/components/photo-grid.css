@@ -1,8 +1,7 @@
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
 
     border-radius: 8px;
@@ -12,9 +11,7 @@
 }
 
 .photo-grid .photo {
-    /* border-radius: 8px; */
     overflow: hidden;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,9 +26,9 @@
     transition: transform 0.3s ease;
 }
 
-.photo-grid .photo:hover img {
+/* .photo-grid .photo:hover img {
     transform: scale(1.05);
-}
+} */
 
 .photo-grid .photo .caption {
     font-size: 14px;
