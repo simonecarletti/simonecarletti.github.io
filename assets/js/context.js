@@ -20,7 +20,7 @@ const experienceData = {
   education: [
     {
       name: "École Polytechnique Fédérale de Lausanne (EPFL)",
-      position: "Master Thesis",
+      position: "Master's Thesis",
       date: "2025 - 2026",
       description: "L1-Adaptive augmentation for robust morphing-wing drone flight control",
       url: "https://www.epfl.ch/",
