@@ -4,6 +4,7 @@ import json
 import time
 import requests
 import pathlib
+import subprocess
 SCRIPT_DIR = pathlib.Path(__file__).parent.resolve()
 
 #pip install --upgrade instagrapi
@@ -90,6 +91,7 @@ else:
 metadata_by_pk = {item["pk"]: item for item in metadata_summary}
 
 print(f"ℹ️ Fetched {len(all_medias)} total posts from Instagram.")
+new_downloads = 0
 
 # Download images and build metadata summary
 for media in all_medias:
@@ -118,6 +120,7 @@ for media in all_medias:
             if r.ok:
                 with open(filepath, 'wb') as f:
                     f.write(r.content)
+                new_downloads += 1
                 print(f"✅ Downloaded {filename}")
             else:
                 print(f"❌ Failed to download {filename}")
@@ -142,3 +145,15 @@ with open(METADATA_FILE_FULL, "w", encoding="utf-8") as f:
     json.dump(list(metadata_by_pk.values()), f, ensure_ascii=False, indent=4)
 
 print(f"\n✅ Done. Images saved in '{MEDIA_FOLDER_FULL}', metadata saved in '{METADATA_FILE_FULL}'")
+print(f"ℹ️ {new_downloads} new images downloaded.")
+
+
+################ GIT PUSH ####################
+if new_downloads > 0:
+    try:
+        subprocess.run(["git", "add", MEDIA_FOLDER_FULL, METADATA_FILE_FULL], check=True)
+        subprocess.run(["git", "commit", "-m", "New Instagram posts"], check=True)
+        subprocess.run(["git", "push", "deploy"], check=True)
+        print("🚀 Changes pushed to 'deploy' branch.")
+    except Exception as e:
+        print(f"⚠️ Error during git push: {e}")
