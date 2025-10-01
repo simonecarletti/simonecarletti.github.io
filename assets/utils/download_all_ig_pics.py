@@ -6,6 +6,10 @@ import requests
 import pathlib
 SCRIPT_DIR = pathlib.Path(__file__).parent.resolve()
 
+#pip install --upgrade instagrapi
+
+print("🚀 Starting Instagram image downloader...")
+
 ##### CONFIGS #####
 DEST_ROOT = str((SCRIPT_DIR / "../images").resolve())  # Ensure DEST_ROOT is relative to the script location
 MEDIA_FOLDER = "instagram"
@@ -36,6 +40,7 @@ if not USERNAME or not PASSWORD:
 
 #################### INIT ####################
 
+print(f"🔐 Logging in with user {USERNAME}")
 cl = Client()
 cl.login(USERNAME, PASSWORD)
 user_id = cl.user_id_from_username(USERNAME)
@@ -52,6 +57,7 @@ os.makedirs(MEDIA_FOLDER_FULL, exist_ok=True)
 
 ################### FETCH ####################
 
+print(f"📥 Fetching media list")
 all_medias = []
 max_pages = 100  # safety limit to avoid infinite loops (adjust if needed)
 amount_per_page = 50  # max allowed is 50
@@ -82,6 +88,8 @@ else:
     metadata_summary = []
 
 metadata_by_pk = {item["pk"]: item for item in metadata_summary}
+
+print(f"ℹ️ Fetched {len(all_medias)} total posts from Instagram.")
 
 # Download images and build metadata summary
 for media in all_medias:
