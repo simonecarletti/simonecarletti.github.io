@@ -37,7 +37,7 @@ const experienceData = {
       position: "M.Sc. Computer Engineering",
       date: "2023 - Present",
       description: "Automation and Intelligent Cyber-Physical Systems",
-      importantInfo: "Current GPA: 29.23/30",
+      importantInfo: "Current GPA: 29.48/30",
       url: "https://www.polito.it/",
     },
     {
