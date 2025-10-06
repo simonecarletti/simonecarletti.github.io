@@ -140,9 +140,12 @@ for media in all_medias:
 
 #################### SAVE ####################
 
-# Save summary metadata
+# Save summary metadata (sorted by taken_at descending - newest first)
+metadata_list = list(metadata_by_pk.values())
+metadata_list.sort(key=lambda x: x["taken_at"], reverse=True)
+
 with open(METADATA_FILE_FULL, "w", encoding="utf-8") as f:
-    json.dump(list(metadata_by_pk.values()), f, ensure_ascii=False, indent=4)
+    json.dump(metadata_list, f, ensure_ascii=False, indent=4)
 
 print(f"\n✅ Done. Images saved in '{MEDIA_FOLDER_FULL}', metadata saved in '{METADATA_FILE_FULL}'")
 print(f"ℹ️ {new_downloads} new images downloaded.")
