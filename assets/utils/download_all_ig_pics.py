@@ -152,7 +152,8 @@ print(f"ℹ️ {new_downloads} new images downloaded.")
 if new_downloads > 0:
     try:
         subprocess.run(["git", "add", MEDIA_FOLDER_FULL, METADATA_FILE_FULL], check=True)
-        subprocess.run(["git", "commit", "-m", "New Instagram posts"], check=True)
+        subprocess.run(["git", "commit", "-am", "New Instagram posts"], check=True)
+        subprocess.run(["git", "push"], check=True)
         subprocess.run(["git", "push", "deploy"], check=True)
         print("🚀 Changes pushed to 'deploy' branch.")
     except Exception as e:
