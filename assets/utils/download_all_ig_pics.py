@@ -21,6 +21,7 @@ SECRETS_FILE = "secrets"
 
 ################ CREDENTIALS ################
 def read_secrets(filepath=SECRETS_FILE):
+    filepath = os.path.join(SCRIPT_DIR, filepath)
     creds = {}
     with open(filepath, "r", encoding="utf-8") as f:
         for line in f:
