@@ -11,7 +11,7 @@ const experienceData = {
     },
     {
       name: "DIANA student team",
-      position: "Control Engineer",
+      position: "Robotic Engineer",
       date: "2023 - 2024",
       description: "Development of a martian rover for the ERC competition",
       url: "https://www.teamdiana.it/",
@@ -19,14 +19,14 @@ const experienceData = {
   ],
   education: [
     {
-      name: "École Polytechnique Fédérale de Lausanne (EPFL)",
+      name: "EPFL",
       position: "Master's Thesis",
       date: "2025 - 2026",
       description: "L1-Adaptive augmentation for robust morphing-wing drone flight control",
       url: "https://www.epfl.ch/",
     },
     {
-      name: "Technical University of Denmark",
+      name: "DTU",
       position: "M.Sc. Autonomous Systems",
       date: "2024 - 2025",
       description: "1 year Erasmus+ exchange.",
