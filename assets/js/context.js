@@ -23,7 +23,7 @@ const experienceData = {
       position: "Master's Thesis",
       date: "2025 - 2026",
       description: "L1-Adaptive augmentation for robust morphing-wing drone flight control",
-      url: "https://www.epfl.ch/",
+      url: "./assets/pdfs/masters_thesis_summary.pdf",
     },
     {
       name: "DTU",
