@@ -1,9 +1,16 @@
 const experienceData = {
   employment: [
     {
+      name: "",
+      position: "Associate Robotics Engineer",
+      date: "2026 - Present",
+      description: "Working for a robotics startup in the field of autonomous drones.",
+      importantInfo: "",
+    },
+    {
       name: "Genomedics s.r.l",
       position: "Full-Stack Developer",
-      date: "2020 - Present",
+      date: "2020 - 2026",
       description:
         "Lead developer of three key projects that handle the release, deployment and licence management for all the company’s products. Developer for the company’s main project (KPlatform).",
       importantInfo: "Angular (Typescript, SCSS, HTML), PHP, Laravel, SQL, Python",
@@ -13,7 +20,7 @@ const experienceData = {
       name: "DIANA student team",
       position: "Robotic Engineer",
       date: "2023 - 2024",
-      description: "Development of a martian rover for the ERC competition",
+      description: "Development of a martian rover for the ERC competition.",
       url: "https://www.teamdiana.it/",
     },
   ],
@@ -29,7 +36,7 @@ const experienceData = {
       name: "DTU",
       position: "M.Sc. Autonomous Systems",
       date: "2024 - 2025",
-      description: "1 year Erasmus+ exchange.",
+      description: "1 year Erasmus+ exchange",
       url: "https://www.dtu.dk/",
     },
     {
@@ -79,10 +86,10 @@ const blogPosts = {
 const context = {
   currYear: new Date().getFullYear(),
   clients: [
-    {
-      url: "https://www.genomedics.it/",
-      src: "./assets/images/clients/genomedics.png",
-    },
+    // {
+    //   url: "https://www.genomedics.it/",
+    //   src: "./assets/images/clients/genomedics.png",
+    // },
     {
       url: "https://www.epfl.ch/",
       src: "./assets/images/clients/epfl.svg",
