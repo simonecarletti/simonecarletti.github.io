@@ -2,9 +2,9 @@ const experienceData = {
   employment: [
     {
       name: "",
-      position: "Associate Robotics Engineer",
+      position: "Robotics Engineer",
       date: "2026 - Present",
-      description: "Working for a robotics startup in the field of autonomous drones.",
+      description: "Working for a robotics startup in the field of UAVs.",
       importantInfo: "",
     },
     {
@@ -44,14 +44,14 @@ const experienceData = {
       position: "M.Sc. Computer Engineering",
       date: "2023 - Present",
       description: "Automation and Intelligent Cyber-Physical Systems",
-      importantInfo: "Current GPA: 29.48/30",
+      importantInfo: "Graduated with honors. GPA: 29.48/30",
       url: "https://www.polito.it/",
     },
     {
       name: "Università degli Studi di Firenze",
       position: "B.Sc. Computer Engineering",
       date: "2020 - 2023",
-      importantInfo: "Graduated with 110/110 cum laude (with honors)",
+      importantInfo: "Graduated with 110/110 with honors",
       description:
         "Thesis title: Creation of a sensor network to monitor the greenhouses of the Botanical Garden of Florence",
       url: "./assets/pdfs/bachelor_thesis.pdf",
@@ -142,17 +142,17 @@ const context = {
   ],
   experienceItems: [
     {
+      name: "Employment",
+      color: "hsl(177, 39%, 72%)",
+      items: experienceData.employment,
+      icon: "laptop-outline",
+    },
+    {
       name: "Education",
       // color: 'hsl(19, 97%, 85%)',
       color: "hsl(76, 39%, 72%)",
       items: experienceData.education,
       icon: "school-outline",
-    },
-    {
-      name: "Employment",
-      color: "hsl(177, 39%, 72%)",
-      items: experienceData.employment,
-      icon: "laptop-outline",
     },
   ],
   blogPosts,
